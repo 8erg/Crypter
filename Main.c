@@ -89,7 +89,7 @@ VOID XorByInputKey(IN PBYTE pShellcode, IN SIZE_T sShellcodeSize, IN PBYTE bKey,
 	}
 }
 
-VOID GenerateKeys(unsigned int length)
+VOID GenerateKey(unsigned int length)
 {
 	int counter = 0;
 	int randomNumber;
@@ -149,12 +149,12 @@ int main()
 	printf("[!] ENTER THE SIZE OF THE KEY (From 1 to 255) : ");
 	scanf_s("%d", &size);
 
-	GenerateKeys(6);
-	XorByInputKey(shellcode, sizeof(shellcode), generatedKey, sizeof(generatedKey));
+	GenerateKey(6);
+	XorByInputKey(shellcode, sizeof(shellcode), generatedKey, size);
 
 	printf("\n*******************************************************************\n\n");
 
-	PrintHexData("KEY", generatedKey, sizeof(generatedKey));
+	PrintHexData("KEY", generatedKey, size);
 	PrintHexData("ENCRYPTED_SHELLCODE", shellcode, sizeof(shellcode));
 
 	printf("[#] Press <Enter> To Quit ...");
