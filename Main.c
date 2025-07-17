@@ -146,7 +146,7 @@ int main()
 	int size;
 	
 	logo();
-	printf("[!] ENTER THE SIZE OF THE KEY (From 1 to 255) : ");
+	printf("[!] ENTER THE SIZE OF THE KEY (From 1 to 256) : ");
 	scanf_s("%d", &size);
 
 	GenerateKey(6);
